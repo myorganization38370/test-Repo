@@ -1,0 +1,93 @@
+GitHub REST API
+
+Url -  https://api.github.com
+version - v3
+
+Accept header - Accept: application/vnd.github.v3+json
+
+while retriving all resources, summary is received. detaild representation received when getiing single resource
+
+Authentication -
+Basic authentication
+$ curl -u "username" https://api.github.com
+
+
+OAuth2 token (sent in a header)
+$ curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com
+
+*Using your client_id and client_secret does not authenticate as a user, it will only identify your OAuth application to increase your rate limit.
+
+
+OAuth2 token
+web application flow.
+non-web application flow.
+
+
+$ curl -i "https://api.github.com/<repo>/<owner>
+
+
+an get global node IDs of objects via the REST API and use them in GraphQL operations.
+
+an access most objects in GitHub (users, issues, pull requests, etc.) using either the REST API or the GraphQL API
+
+list files
+curl -i -u chanakaGH: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 https://api.github.com/repos/chanakaGH/MyTestRepo/git/trees/master?recursive=1
+
+read file
+curl -i -u chanakaGH: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 https://api.github.com/repos/ChanakaGH/MyTestRepo/git/blobs/1d17bb7e1695c46e7e4a4429c08c030c9716379e
+
+commits:
+curl -i -u chanakaGH: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 https://api.github.com/repos/chanakaGH/MyTestRepo/commits
+
+
+get Event List:
+curl -i -u chanakaGH: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 https://api.github.com/networks/chanakaGH/MyTestRepo/events 	 	
+
+
+Search API
+https://docs.github.com/en/rest/reference/search#search-code
+
+Search code
+Search commits
+Search issues and pull requests
+Search labels
+Search repositories
+Search topics
+Search users
+
+
+
+get files of connit
+https://api.github.com/repos/ChanakaGH/MyTestRepo/commits/c7a3316dcdbeb0a409cfed30fb323715ad886201
+get [files]
+"files": [
+        {
+            "sha": "048e46fb774bfc153830431b10f196dcc5526fd1",
+            "filename": "MyFile2",
+            "status": "added",
+            "additions": 10,
+            "deletions": 0,
+            "changes": 10,
+            "blob_url": "https://github.com/ChanakaGH/MyTestRepo/blob/c7a3316dcdbeb0a409cfed30fb323715ad886201/MyFile2",
+            "raw_url": "https://github.com/ChanakaGH/MyTestRepo/raw/c7a3316dcdbeb0a409cfed30fb323715ad886201/MyFile2",
+            "contents_url": "https://api.github.com/repos/ChanakaGH/MyTestRepo/contents/MyFile2?ref=c7a3316dcdbeb0a409cfed30fb323715ad886201",
+            "patch": "@@ -0,0 +1,10 @@\n+cSasdAF\n+DA\n+Fa\n+f\n+AS\n+Fa\n+sf\n+AS\n+F\n+af"
+        }
+    ]
+	
+	
+	
+	Searching commits
+You can search for commits globally across all of GitHub, or search for commits within a particular repository or organization. 
+
+filter commit5s
+
+https://api.github.com/repos/ChanakaGH/MyTestRepo/commits?branch=master&since=2021-07-12T13:20:34Z&until=2021-07-12T13:28:34Z
+
+
+/orgs/{org}/repos
+
+
+contributors
+
+https://api.github.com/repos/ChanakaGH/MyTestRepo/contributors
